@@ -1,0 +1,36 @@
+{
+  "name": "library-university",
+  "version": "1.0.0",
+  "description": "Api rest for one university in general",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "prod": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Darwin073100/library-university.git"
+  },
+  "keywords": [
+    "javascript",
+    "express",
+    "postgresql",
+    "api"
+  ],
+  "author": "Edwin Garcia Quiterio<edwinegq@outlook.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Darwin073100/library-university/issues"
+  },
+  "homepage": "https://github.com/Darwin073100/library-university#readme",
+  "devDependencies": {
+    "eslint": "^8.32.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "nodemon": "^2.0.20",
+    "prettier": "^2.8.3"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
