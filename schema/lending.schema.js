@@ -13,7 +13,6 @@ const getLendingSchema = Joi.object({
 const createLendingSchema = Joi.object({
   bookId: bookId.required(),
   studentId: studentId.required(),
-  dateOut: dateOut.required(),
   dateIn: dateIn.required(),
 });
 
