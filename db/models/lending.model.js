@@ -38,6 +38,7 @@ class Lending extends Model{
       sequelize,
       tableName: LENDING_TABLE,
       modelName: 'Lending',
+      timestamps: false
     }
   }
 }

@@ -42,6 +42,7 @@ class Book extends Model{
       sequelize,
       tableName: BOOK_TABLE,
       modelName: 'Book',
+      timestamps: false
     }
   }
 }

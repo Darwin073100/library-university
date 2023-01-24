@@ -5,7 +5,11 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
-    "prod": "node index.js"
+    "prod": "node index.js",
+    "lint": "eslint",
+    "migrations:generate": "sequelize-cli migration:generate --name",
+    "migrations:run": "sequelize-cli db:migrate",
+    "migrations:revert": "sequelize-cli bd:migrate:undo"
   },
   "repository": {
     "type": "git",
