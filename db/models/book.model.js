@@ -37,6 +37,13 @@ const BookSchema = {
 };
 
 class Book extends Model{
+  static associate(models){
+    this.hasMany(models.Lending,{
+      as: 'lending',
+      foreignKey: 'bookId'
+    });
+  }
+
   static config(sequelize){
     return{
       sequelize,

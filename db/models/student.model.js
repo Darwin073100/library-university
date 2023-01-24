@@ -40,6 +40,13 @@ const StudentSchema = {
 };
 
 class Student extends Model{
+  static associate(models){
+    this.hasOne(models.Lending,{
+      as: 'lending',
+      foreignKey: 'studentId'
+    });
+  }
+
   static config(sequelize){
     return{
       sequelize,

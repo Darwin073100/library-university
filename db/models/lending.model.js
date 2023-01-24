@@ -1,5 +1,8 @@
 const { Model, DataTypes, Sequelize } = require('sequelize');
 
+const { BOOK_TABLE } = require('./book.model');
+const { STUDENT_TABLE } = require('./student.model');
+
 const LENDING_TABLE = 'lending';
 
 const LendingSchema = {
@@ -12,12 +15,24 @@ const LendingSchema = {
   bookId:{
     allowNull: false,
     type: DataTypes.INTEGER,
-    field: 'book_id'
+    field: 'book_id',
+    references:{
+      model: BOOK_TABLE,
+      key: 'id'
+    },
+    onDelete: 'SET NULL',
+    onUpdate: 'CASCADE'
   },
   studentId:{
     allowNull: false,
     type: DataTypes.INTEGER,
     field: 'student_id',
+    references:{
+      model: STUDENT_TABLE,
+      key: 'id'
+    },
+    onDelete: 'SET NULL',
+    onUpdate: 'CASCADE'
   },
   dateOut:{
     allowNull: true,
@@ -33,6 +48,11 @@ const LendingSchema = {
 };
 
 class Lending extends Model{
+  static associate(models){
+    this.belongsTo(models.Book,{as: 'book'});
+    this.belongsTo(models.Student,{as: 'student'});
+  }
+
   static config(sequelize){
     return{
       sequelize,
