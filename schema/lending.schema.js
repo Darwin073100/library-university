@@ -3,6 +3,7 @@ const Joi = require('joi');
 const id = Joi.number().integer();
 const bookId = Joi.number().integer();
 const studentId = Joi.number().integer();
+const returned = Joi.boolean();
 const dateOut = Joi.date();
 const dateIn = Joi.date();
 
@@ -19,6 +20,7 @@ const createLendingSchema = Joi.object({
 const updateLendingSchema = Joi.object({
   bookId,
   studentId,
+  returned,
   dateOut,
   dateIn,
 });

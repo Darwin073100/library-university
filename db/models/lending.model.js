@@ -34,6 +34,11 @@ const LendingSchema = {
     onDelete: 'SET NULL',
     onUpdate: 'CASCADE'
   },
+  returned:{
+    allowNull: false,
+    type: DataTypes.BOOLEAN,
+    defaultValue: false,
+  },
   dateOut:{
     allowNull: true,
     type: DataTypes.DATE,
