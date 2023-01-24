@@ -32,4 +32,14 @@ const LendingSchema = {
   },
 };
 
-module.exports = { LENDING_TABLE, LendingSchema };
+class Lending extends Model{
+  static config(sequelize){
+    return{
+      sequelize,
+      tableName: LENDING_TABLE,
+      modelName: 'Lending',
+    }
+  }
+}
+
+module.exports = { LENDING_TABLE, LendingSchema, Lending };

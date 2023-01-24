@@ -39,4 +39,14 @@ const StudentSchema = {
   },
 };
 
-module.exports = { STUDENT_TABLE, StudentSchema };
+class Student extends Model{
+  static config(sequelize){
+    return{
+      sequelize,
+      tableName: STUDENT_TABLE,
+      modelName: 'Student',
+    }
+  }
+}
+
+module.exports = { STUDENT_TABLE, StudentSchema, Student };

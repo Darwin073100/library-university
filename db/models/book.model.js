@@ -36,4 +36,14 @@ const BookSchema = {
   }
 };
 
-module.exports = { BOOK_TABLE, BookSchema };
+class Book extends Model{
+  static config(sequelize){
+    return{
+      sequelize,
+      tableName: BOOK_TABLE,
+      modelName: 'Book',
+    }
+  }
+}
+
+module.exports = { BOOK_TABLE, BookSchema, Book };
