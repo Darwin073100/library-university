@@ -9,7 +9,7 @@ const app = express();
 
 app.use(express.json());
 
-const whitelist = ['https://localhost:8080', 'https://example.com'];
+const whitelist = ['http://localhost:8080', 'https://example.com'];
 const options = {
   origin: (origin, callback)=>{
     if(whitelist.includes(origin) || !origin){
